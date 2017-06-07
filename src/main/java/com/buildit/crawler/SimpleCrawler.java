@@ -1,6 +1,9 @@
 package com.buildit.crawler;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 import com.buildit.crawler.model.VisitedSubdomainsRepository;
 import com.buildit.crawler.model.WorkerQueue;
@@ -15,14 +18,14 @@ import com.buildit.crawler.util.LinksParser;
  * @author sgollapinni
  */
 public class SimpleCrawler {
-	
+
+	final int MAX_NUM_OF_SUBDOMAINS_TO_BE_PROCESSED = 5; // just to avoid running forever
+
 	// composition
 	private String website;
 	private WorkerQueue queue;
 	private LinksParser parser; // interface to parse links
 	private VisitedSubdomainsRepository visitedSubdomainsRepository;
-	
-	final int MAX_NUM_OF_SUBDOMAINS_TO_BE_PROCESSED = 10; // just to avoid running forever
 	
 	public SimpleCrawler(String website) {
 		this.website = website;
@@ -50,7 +53,7 @@ public class SimpleCrawler {
 					queue = parser.parseToQueue(currentUrl, website, queue);
 				} catch (IOException e) {
 					System.out.println("IO Exception while processing currentLink : " + currentUrl);
-					e.printStackTrace();
+					// e.printStackTrace();
 				}
     			currentCounter++;
     		} else {
@@ -64,4 +67,5 @@ public class SimpleCrawler {
     	System.out.println("Done...");
     	//visitedSubdomainsRepository.print();
     }
+    
 }

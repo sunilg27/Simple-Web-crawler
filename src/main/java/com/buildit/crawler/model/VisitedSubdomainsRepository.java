@@ -50,15 +50,18 @@ public class VisitedSubdomainsRepository {
 	
 	private String trimHashReferences(String url) {
 		int endPos;
-	    if (url.indexOf("?") > 0) {
-	        endPos = url.indexOf("?");
-	    } else if (url.indexOf("#") > 0) {
-	        endPos = url.indexOf("#");
-	    } else {
-	        endPos = url.length();
-	    }
-
-	    return url.substring(0, endPos);
+		if(url != null) {
+		    if (url.indexOf("?") > 0) {
+		        endPos = url.indexOf("?");
+		    } else if (url.indexOf("#") > 0) {
+		        endPos = url.indexOf("#");
+		    } else {
+		        endPos = url.length();
+		    }
+			
+		    return url.substring(0, endPos);
+		}
+		return "";
 	}
 
 }
