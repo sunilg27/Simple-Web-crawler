@@ -34,14 +34,20 @@ Build:
 # Scope & Further improvement
 
 Following can be implemented to make this application more efficient:
+	
 	- Validation.
+	
 	- Notification Listener (instead of waiting for the crawling operation, it can just send email when its done). 
+	
 	- Multi threading.
+	
 	- Support multiple sites crawling by multi-threading & storing into DB.
+	
 	- Provide VIEW layer (jsp page) to take input(website-name) from user.
 
 # External libraries used
 
 	- jsoup
+	
 	- sitemapgen4j
 
