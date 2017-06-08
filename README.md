@@ -37,6 +37,9 @@ Please do check the logs for more information.
 - [x]	output is sitemap XML and interface is provided so that in future if other implementations (like HTML, PDF) are needed.
 - [x]	sitemap xml is generated using the sitemapgen4j. This is again flexible interms of adding additional properties.
 
+![UML diagram of Simple web crawler](https://github.com/sunilg27/Simple-Web-crawler/blob/master/SimpleWebCrawler-captions.png)
+
+
   
 # Scope & Further improvement
 
