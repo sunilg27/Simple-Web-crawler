@@ -7,17 +7,23 @@ The crawler to be limited to one domain. Given a starting URL – say http://exa
 
 The output to be a simple structured site map, showing links to other pages under the same domain.
 
+
+# Requirements
+
+System install : Java 1.5+ & Maven 3.3.9 
+Works on : 	Linux, Windows, Mac OSX, BSD
+Maven Dependencies: JUnit 4.12, Jsoup 1.12.1 and sitemapgen4j 1.0.1
+
 # Usage
 
 This is a maven project with JUnit integration. Clone or Download this repository into local computer. 
 
-Site that need to be crawled can be specified in Simple-Web-crawler/resources/config.properties file for 'website' property.
+Site that need to be crawled can be specified in Simple-Web-crawler/resources/config.properties file with 'website' property.
 
-Build:
-	- 'mvn clean install' in the base directory where pom.xml is placed. 
-	- using eclipse, you can do build or maven build/install goals.
+Build: 
+mvn clean install in the base directory(Simple-Web-crawler) where pom.xml is placed. 
 
-
+After running the maven build it would have crawled the website specified in the config properties. Please do check the logs for more information.
 
 # Design decisions
 
@@ -41,13 +47,14 @@ Following can be implemented to make this application more efficient:
 	
 	- Multi threading.
 	
-	- Support multiple sites crawling by multi-threading & storing into DB.
+	- Storing into DB instead of in-memory collection.
 	
 	- Provide VIEW layer (jsp page) to take input(website-name) from user.
+
+	- Distributed web crawling can be other option: where we can have Crawlers, Task Queue, DB & file system to distribute among multiple systems and work on different sites in parellel. 
 
 # External libraries used
 
 	- jsoup
 	
 	- sitemapgen4j
-
