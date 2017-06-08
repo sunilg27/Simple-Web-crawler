@@ -20,7 +20,7 @@ This is a maven project with JUnit integration. Clone or Download this repositor
 
 Site that need to be crawled can be specified in *Simple-Web-crawler/resources/config.properties* file with `website` property.
 
-#### Build #### : 
+#### Build 
 `mvn clean install` in the base directory(Simple-Web-crawler) where *pom.xml* is placed. 
 
 After running the maven build it would have crawled the website specified in the config properties. 
