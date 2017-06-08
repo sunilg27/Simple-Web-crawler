@@ -26,7 +26,7 @@ Site that need to be crawled can be specified in *Simple-Web-crawler/resources/c
 After running the maven build it would have crawled the website specified in the config properties. 
 Please do check the logs for more information.
 
-# Design decisions
+# Design decisions and trade-offs
 
 - [x]	Designed simple maven project so that dependencies can be handled by pom.xml
 - [x]	BFS algorithm is considered to navigate through links when crawling operation is done.
@@ -36,6 +36,8 @@ Please do check the logs for more information.
 - [x]	VisitedSubDomainsRepository is a unique set contains the urls to check if url is already visited. (As of now, In-memory collection and it should be stored into a Database so that even if application crashes it will pickup from where it left since already visited links information is available)
 - [x]	output is sitemap XML and interface is provided so that in future if other implementations (like HTML, PDF) are needed.
 - [x]	sitemap xml is generated using the sitemapgen4j. This is again flexible interms of adding additional properties.
+
+TODO: Need to explain in detail about each decision and trade-off (due to time constraint its not done and will done shortly)
 
 ![UML diagram of Simple web crawler](https://github.com/sunilg27/Simple-Web-crawler/blob/master/SimpleWebCrawler-captions.png)
 
